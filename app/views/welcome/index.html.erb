@@ -1,0 +1,27 @@
+<div class='move-bottom'>
+  <div class="col-lg-12">
+    <h2 class="page-header">Dashboard</h2>
+  </div>
+  <% if @albums.count.zero? %>
+      <div class="text-center no_album">
+        <div class="col-md-12">
+          <%= link_to new_album_path, remote: true do %>
+              <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+              <i class="fa fa-file-pdf-o"></i>
+              <h4><b>Seems you are new.<br/>Click here to get started.</b></h4>
+          <% end %>
+        </div>
+        <br class="clearfix">
+      </div>
+  <% else %>
+      <div class="row">
+        <div class="col-xs-12 marginB10 text-right">
+          <%= link_to new_album_path, remote: true, class: 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+              Add New Album
+          <% end %>
+        </div>
+      </div>
+      <%= render partial: 'welcome/list_of_albums', locals: {albums: @albums} %>
+  <% end %>
+</div>

@@ -1,0 +1,48 @@
+<div class='move-bottom'>
+  <div class="col-lg-12">
+    <h2 class="page-header"><%= album.name %>
+      <p class="owner_info">
+        <b>Owner: </b> <%= album.owner.full_name %></br>
+        <b>Created at: </b> <%= album.created_at %>
+      </p>
+    </h2>
+  </div>
+
+  <% if album.owner == current_user %>
+      <div class="row">
+        <div class="col-md-12 marginB10 text-right">
+          <%= link_to edit_album_path(album), class: 'btn btn-default', remote: true do %>
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+              Edit
+          <% end %>
+          <%= link_to album_path(album), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default', remote: true do %>
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              Delete
+          <% end %>
+          <%= link_to new_album_photo_path(album), class: 'btn btn-primary', remote: true do %>
+              <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+              Add New Photo
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12 album_list_container" style="display: <%= album.photos.count.zero? ? 'visible' : 'none' %>">
+      <div class="text-right form-group text-center">
+        <%= link_to 'Add Photo', new_album_photo_path(album),
+                    class: 'btn btn-primary btn-lg', remote: true %>
+      </div>
+      <div class="no_photos">
+        <div class="text-center">
+          <div class="clearfix"></div>
+          <span class="glyphicon glyphicon-picture"></span>
+
+          <p>No Photo in Album. Please add some. </p>
+        </div>
+      </div>
+    </div>
+
+    <%= render partial: 'photos/photo_view', collection: album.photos, as: :photo %>
+  </div>
+
+</div>

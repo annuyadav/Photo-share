@@ -1,0 +1,29 @@
+<div class="album_list_container" id="album_lists">
+  <div class="col-md-12" style="display: <%= albums.count.zero? ? 'visible' : 'none' %>">
+    <div class="no_photos">
+      <div class="text-center">
+        <div class="clearfix"></div>
+        <span class="glyphicon glyphicon-picture"></span>
+        <p>No album available. </p>
+      </div>
+    </div>
+  </div>
+
+  <% albums.each do |album| %>
+      <div class='col-md-4 project-snippet'>
+        <%= link_to(album_path(album), title: album.name.humanize) do %>
+            <div class="stack irotated">
+              <div class="content">
+                <div class="plate">
+                  <div class="album-bg" style="background-image: url('<%= album.default_photo_url %>');"></div>
+                </div>
+                <h4 class='title'>
+                  <span class='pull-left album-name'><%= album.name %></span>
+                  <span class='pull-right photo-count'><%= pluralize(album.photos.count, 'Photo') %></span>
+                </h4>
+              </div>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+== README
+
+* Ruby version : 2.2.1
+
+* System dependencies: imagemagick  (brew install imagemagick)
+
+Then create Data base and run all migrations.
+Start server and start browsing the app.
+

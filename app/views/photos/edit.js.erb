@@ -1,0 +1,5 @@
+$('div.modal-content').html("<%=j render partial: 'photos/form', locals: {photo: @photo, album: @album} %>");
+$('#modal-window').modal('show');
+$('#modal-window').on('shown.bs.modal', function () {
+  $('#photo_tag_line').focus();
+});

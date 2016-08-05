@@ -1,0 +1,270 @@
+// Place all the styles related to the albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row {
+  .panel {
+    border: medium none;
+    box-shadow: 0 1px 0 white;
+    margin-bottom: 25px;
+    min-height: 100%;
+    width: 100%;
+    .panel-heading {
+      background: #4688b9 none repeat scroll 0 0 !important;
+      border: 1px solid #004273;
+      box-shadow: none;
+      color: #fff;
+      height: auto;
+      padding: 0;
+      position: relative;
+      h4 {
+        margin: 0;
+        min-height: 37px;
+        padding: 9px 15px 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      a {
+        color: #fff;
+      }
+      &:hover {
+        cursor: move;
+      }
+    }
+    .panel-body {
+      background: #e9e9e9 none repeat scroll 0 0;
+      h5 {
+        font-size: 14px;
+        margin-bottom: 4px;
+        font-weight: bold;
+      }
+      li {
+        padding: 7px;
+      }
+    }
+  }
+}
+
+.move-bottom {
+  .page-header {
+    border-bottom: 1px solid #f0f0f0;
+    p.owner_info{
+      font-size: 12px;
+      margin-right: 0;
+      text-align: right;
+      color: #002266;
+      .glyphicon{
+        margin-right: 2px !important;
+      }
+    }
+  }
+  .photo-view {
+    h4{
+      margin: 10px;
+      p.owner_info{
+        margin-top: 10px;
+        span{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+.album_list_container {
+  ul.nav {
+    margin-bottom: 30px;
+  }
+  .no_photos {
+    .glyphicon {
+      font-size: 52px;
+      padding: 22px 0;
+      color: #7d7d7d;
+      margin: 20px 0;
+    }
+    p {
+      color: #444;
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  p.list_status {
+    margin: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+  }
+}
+
+.project-snippet {
+  margin-bottom: 1.5em;
+  position: relative;
+  .stack {
+    float: left;
+    margin: 0 4% 4% 0;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    .content {
+      border: 10px solid #fff;
+      border-radius: 3px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      box-sizing: border-box;
+      height: auto;
+      max-width: 100%;
+      vertical-align: bottom;
+      .plate {
+        height: 100%;
+        max-height: 84.5%;
+        position: absolute;
+        width: 100%;
+        .album-bg {
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .content {
+    background-color: #fff;
+    height: 295px !important;
+    overflow: hidden;
+    position: relative;
+    .title {
+      background-color: #aaa;
+      border-radius: 3px;
+      bottom: 0;
+      color: #dadada;
+      font-size: 16px;
+      font-weight: 600;
+      height: 30px;
+      margin: 10px 0 0;
+      overflow: hidden;
+      padding: 5px;
+      position: absolute;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+      width: 100%;
+      .album-name {
+        height: 100%;
+        line-height: 22px;
+        text-overflow: ellipsis;
+        text-shadow: 2px 2px 3px black;
+        width: 70%;
+      }
+      .photo-count {
+        line-height: 21px;
+        font-size: 12px;
+        color: #337ab7;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.stack:hover.irotated::before {
+  transform: rotate(1deg);
+  transform-origin: left bottom 0;
+}
+
+.stack:hover.irotated::after {
+  transform: rotate(2deg);
+  transform-origin: left bottom 0;
+}
+
+.stack:hover::before, .stack:hover::after {
+  transform: rotate(0deg);
+}
+
+.stack::before, .stack::after {
+  border: 10px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition: all 0.3s ease-out 0s;
+  width: 100%;
+}
+
+.stack::before {
+  top: 2px;
+  z-index: -10;
+}
+
+.stack::after {
+  top: 4px;
+  z-index: -20;
+}
+
+.sheet-block {
+  .single_sheet{
+    float: left;
+    margin: 0 4% 30px 0;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    .content{
+      border: 3px solid #fff;
+      border-radius: 3px;
+      box-shadow: 0 0px 2px rgba(0,0,0,0.4);
+      box-sizing: border-box;
+      height: auto;
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  .panel {
+    margin-bottom: 0px;
+    border-radius: 2px;
+  }
+  .panel-default {
+    border: 0 solid;
+    box-shadow: none;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: all 0.6s ease 0s;
+    -moz-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+    .vertical-outer {
+      display: table;
+      overflow: hidden;
+      padding: 0;
+      text-align: center;
+      margin: 10px auto;
+      img {
+        max-width: 205px;
+        max-height: 150px;
+        width: 200px;
+        border-radius: 5px;
+      }
+    }
+    .photo-detail {
+      border-top: 1px solid #dddddd;
+      color: #4286b3;
+      border-radius: 0;
+      overflow: hidden;
+      padding: 3px;
+      a{
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.image-view{
+  img{
+    width: 100%;
+  }
+}

@@ -1,0 +1,5 @@
+$('div.modal-content').html("<%=j render partial: 'albums/form', locals: {album: @album} %>")
+$('#modal-window').modal('show');
+$('#modal-window').on('shown.bs.modal', function () {
+  $('#album_name').focus();
+});

@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title" id="myModalLabel">Photo</h4>
+</div>
+<div class="modal-body">
+      <%= form_for([album, photo], remote: true, html: {multipart: true }) do |f| %>
+      <div>
+        <p class="validation-error">&nbsp;
+        <%= photo.errors[:album].present? ? photo.errors[:album].join(',') : '' %>
+        </p>
+      </div>
+      <div class="field form-group">
+        <%= f.label :tag_line %>
+        <%= f.text_area :tag_line, class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :image %>
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit class: "btn btn-default btn-primary pull-right", data: {disable_with: 'Saving...'} %>
+        <div class="clearfix"></div>
+      </div>
+  <% end %>
+</div>
